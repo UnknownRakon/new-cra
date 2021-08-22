@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import store from './root/root';
 
 function App() {
   const SayHello: string = 'Hello';
-
+  store()
   return (
     <div className="App">
       <header className="App-header">

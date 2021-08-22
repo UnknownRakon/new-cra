@@ -4,9 +4,33 @@
  * поменяйте в соответствии с выполняемым запросом.
  * Выберите любой запрос из публичного API GitHub.
  */
- export interface IGitHubStore {
-    getSomeData(params: GetSomeDataParams): Promise<ApiResp<GetSumeDataResp>>;
-
-    // Необязательный пункт, т.к. требует авторизации. Понадобится в будущем
-    postSomeData(params: PostSomeDataPrams): Promise<ApiResp<PostSomeDataResp>>;
+// enum RepoTypes {
+//     'all',
+//     'public',
+//     'private',
+//     'forks',
+//     'sources',
+//     'member',
+//     'internal'
+// }
+// enum RepoSorts{
+//     'created',
+//     'updated',
+//     'pushed',
+//     'full_name',
+// }
+export type GetOrganizationReposListParams = {
+    // accept: string;
+    org: string;
+    // type: RepoTypes;
+    // sort: RepoSorts;
+    // direction: 'asc' | 'desc';
+    // per_page: number;
+    // page: number
+}
+export type ApiResp<RepoItem> = {
+    data: RepoItem
+}
+export interface IGitHubStore {
+    getOrganizationReposList<RepoItem = {}>(params: GetOrganizationReposListParams): Promise<ApiResp<RepoItem[]>>;
 }

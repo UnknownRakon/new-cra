@@ -1,5 +1,5 @@
 // Перечисление методов HTTP-запроса
-enum HTTPMethod {
+export enum HTTPMethod {
     GET = 'GET',
     POST = 'POST'
 }
@@ -41,7 +41,6 @@ export type ApiResponse<SuccessT, ErrorT> =
 export interface IApiStore {
     // базовый url для выполнения запросов. TODO: указать url GitHub API в классе ApiStore
     readonly baseUrl: string;
-
     // Метод, с помощью которого делается запрос. TODO: реализовать в классе ApiStore
     request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>
 }
