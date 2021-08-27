@@ -1,3 +1,5 @@
+import { RepoItem } from './../store/GitHubStore/types';
+import { ApiResponse } from './../shared/store/ApiStore/types';
 // Здесь необходимо продемонстрировать создание и использование GitHubStore
 import GitHubStore from '../store/GitHubStore/GitHubStore';
 
@@ -9,7 +11,7 @@ export default function store() {
     
 gitHubStore.getOrganizationReposList({
     org: EXAMPLE_ORGANIZATION
-  }).then(result => {
+  }).then((result: ApiResponse<RepoItem[], any>) => {
     console.log(result); // в консоли появится список репозиториев в ktsstudio
   })
   
