@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import store from './root/root';
+import store from '../root/root';
 
-function App() {
+const App = () => {
   const SayHello: string = 'Hello';
   store()
   return (
