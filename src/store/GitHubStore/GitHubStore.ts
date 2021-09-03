@@ -4,7 +4,9 @@ import { ApiResponse } from "./../../shared/store/ApiStore/types";
 import {
   IGitHubStore,
   GetOrganizationReposListParams,
+  getRepoBranchesParams,
   RepoItem,
+  BrunchItem,
 } from "./types";
 
 export default class GitHubStore implements IGitHubStore {
@@ -18,7 +20,14 @@ export default class GitHubStore implements IGitHubStore {
       headers: {},
       data: {},
     });
-    // TODO: Здесь сделайте вызов из this.apiStore и верните результат
-    // Документация github: https://docs.github.com/en/rest/reference/repos#list-organization-repositories
   }
+  async getRepoBranches (params: getRepoBranchesParams): Promise<ApiResponse<BrunchItem[], any>>{
+    return await this.apiStore.request({
+      method: HTTPMethod.GET,
+      endpoint: `repos/${params.owner}/${params.repo}/branches`,
+      headers: {"Authorization" : "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"},
+      data: {},
+    });
+  };
+
 }

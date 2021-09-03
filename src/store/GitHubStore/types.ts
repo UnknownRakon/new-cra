@@ -29,6 +29,10 @@ export interface GetOrganizationReposListParams {
   // per_page: number;
   // page: number
 }
+export interface getRepoBranchesParams {
+  owner: string | undefined;
+  repo: string | undefined;
+}
 export interface GitHubRepoOwner {
   id: number;
   html_url: string;
@@ -45,9 +49,15 @@ export interface RepoItem {
   updated_at: string
 }
 
+export interface BrunchItem {
+  name: string
+}
+
 export interface IGitHubStore {
   getOrganizationReposList: (
     params: GetOrganizationReposListParams
   ) => Promise<ApiResponse<RepoItem[], any>>;
-  
+  getRepoBranches: (
+    params: getRepoBranchesParams
+  ) => Promise<ApiResponse<BrunchItem[], any>>;
 }

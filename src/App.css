@@ -116,6 +116,8 @@ body {
   color: var(--hint);
   text-decoration: none;
   transition: color .5s;
+  display: block;
+  width: fit-content;
 }
 
 .card__link:hover {
