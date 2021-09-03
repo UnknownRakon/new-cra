@@ -23,7 +23,8 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "lint": "eslint'./src/**/*.{ts,tsx}'",
-    "lint:fix":"eslint'./src/**/*.{ts,tsx}'--fix"
+    "lint:fix": "eslint'./src/**/*.{ts,tsx}'--fix",
+    "eslint": "eslint src --ext .ts,tsx --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -45,8 +46,13 @@
   },
   "devDependencies": {
     "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-alloy": "^4.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
     "prettier": "^2.3.2",
     "react-app-rewire-alias": "^1.0.3",
     "react-app-rewired": "^2.1.8",
