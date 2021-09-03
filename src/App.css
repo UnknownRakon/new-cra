@@ -45,6 +45,7 @@ body {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
+  margin-right: 5px;
 }
 
 .search__input:focus {
@@ -138,6 +139,14 @@ body {
   color: #fff;
 }
 
+.card__image {
+  flex-shrink: 0;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: 0 12px;
+}
+
 .card__content {
   height: 100%;
   flex-grow: 1;
@@ -149,6 +158,7 @@ body {
 
 .card__svg {
   vertical-align: baseline;
+  margin-right: 3px;
 }
 
 .card__info {

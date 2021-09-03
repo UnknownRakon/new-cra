@@ -1,10 +1,11 @@
+import 'antd/dist/antd.css';
 import "./App.css";
-import PageOne from "@pages/PageOne";
+import ReposSearchPage from "@pages/ReposSearchPage";
 
 const App = () => {
   return (
     <div className="main" >
-      <PageOne/>
+      <ReposSearchPage/>
     </div>
   );
 };

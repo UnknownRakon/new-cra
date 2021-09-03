@@ -31,21 +31,23 @@ export interface GetOrganizationReposListParams {
 }
 export interface GitHubRepoOwner {
   id: number;
-  url: string;
-  avaatar_url: string;
+  html_url: string;
+  avatar_url: string;
   login: string;
 }
 
 export interface RepoItem {
   id: number;
-  url: string;
+  html_url: string;
   name: string;
   stargazers_count: number;
   owner: GitHubRepoOwner;
+  updated_at: string
 }
 
 export interface IGitHubStore {
   getOrganizationReposList: (
     params: GetOrganizationReposListParams
   ) => Promise<ApiResponse<RepoItem[], any>>;
+  
 }
